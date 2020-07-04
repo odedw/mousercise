@@ -9,5 +9,6 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "none"
-  }
+  },
+  "exclude": ["node_modules"]
 }
