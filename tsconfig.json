@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
     "target": "es5",
+    "outDir": "./src/",
     "removeComments": true,
     "preserveConstEnums": true,
-    "outFile": "./build/build.js",
-    "sourceRoot": "./src/",
-    "rootDir": "./src/",
     "sourceMap": true,
-    "noImplicitAny": true,
-    "module": "none"
+    "noImplicitAny": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["src/*"]
 }
