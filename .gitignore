@@ -2,4 +2,3 @@ node_modules/
 .vscode/
 **/*.js.map
 build/*
-bundle.js
