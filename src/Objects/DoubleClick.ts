@@ -8,17 +8,14 @@ export class DoubleClick extends GameObject {
     y: number,
     onComplete: (o: GameObject) => void
   ) {
-    super(p, x, y, 20, 20, onComplete);
+    super(p, x, y, "Double\nClick", onComplete);
   }
   render(): void {
-    const p = this.p;
-    p.fill("green");
-    p.strokeWeight(0);
-    p.square(-10, -10, 20);
+    super.render();
   }
 
   doubleClicked(evt: any) {
-    if (this.rect.contains(evt.x, evt.y)) {
+    if (this.contains(evt.x, evt.y)) {
       this.onComplete(this);
     }
   }
