@@ -4,6 +4,7 @@ import { DoubleClick } from "./DoubleClick";
 import { GameObject } from "./GameObject";
 
 export class Factory {
+  // static classes = [Click];
   static classes = [Click, DoubleClick];
   static createRandomObject(
     p: p5,

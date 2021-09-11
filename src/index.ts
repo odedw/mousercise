@@ -17,6 +17,8 @@ const sketch = (p: p5) => {
 
   p.setup = () => {
     p.createCanvas(p.windowWidth, p.windowHeight);
+    p.textSize(20);
+    p.textFont("Kranky").textAlign(p.LEFT);
   };
 
   p.draw = () => {

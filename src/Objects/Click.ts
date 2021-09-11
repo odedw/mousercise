@@ -8,17 +8,16 @@ export class Click extends GameObject {
     y: number,
     onComplete: (o: GameObject) => void
   ) {
-    super(p, x, y, 20, 20, onComplete);
+    super(p, x, y, "Click", onComplete);
   }
   render(): void {
     const p = this.p;
-    p.fill("blue");
-    p.strokeWeight(0);
-    p.square(-10, -10, 20);
+    super.render();
+   
   }
 
   mouseClicked(evt: any) {
-    if (this.rect.contains(evt.x, evt.y)) {
+    if (this.contains(evt.x, evt.y)) {
       this.onComplete(this);
     }
   }

@@ -21,27 +21,48 @@ export abstract class GameObject {
   p: p5;
   x: number;
   y: number;
-  rect: Rectangle;
   onComplete: (o: GameObject) => void;
   id: number;
+  name: string;
+  h: number;
+  w: any;
   constructor(
     p: p5,
     x: number,
     y: number,
-    w: number,
-    h: number,
+    name: string,
     onComplete: (o: GameObject) => void
   ) {
     this.p = p;
     this.x = x;
     this.y = y;
-    this.rect = new Rectangle(x - w / 2, y - h / 2, w, h);
+    this.name = name;
+    this.h = 30;
     this.onComplete = onComplete;
     this.id = new Date().valueOf();
+    this.setWidth();
+  }
+  setWidth() {
+    this.w = this.p.textSize(this.h).textWidth(this.name);
   }
 
-  abstract render(): void;
+  render() {
+    const p = this.p;
+    p.textSize(this.h);
+    p.square(-this.w / 2, -this.h / 2, this.w, this.h);
 
+    // p.fill(0).circle(0, 0, 5);
+    p.text("Click", -this.w / 2, -this.h / 2, this.w, this.h);
+  }
+
+  contains(x: number, y: number): boolean {
+    return (
+      x > this.x - this.w / 2 &&
+      x < this.x + this.w / 2 &&
+      y > this.y - this.h / 2 &&
+      y < this.y + this.h / 2
+    );
+  }
   mouseClicked(evt: any): void {}
   doubleClicked(evt: any): void {}
 }
