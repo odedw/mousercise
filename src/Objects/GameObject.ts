@@ -49,7 +49,7 @@ export abstract class GameObject {
   render() {
     const p = this.p;
     p.textSize(this.h);
-    p.square(-this.w / 2, -this.h / 2, this.w, this.h);
+    // p.square(-this.w / 2, -this.h / 2, this.w, this.h);
 
     // p.fill(0).circle(0, 0, 5);
     p.text("Click", -this.w / 2, -this.h / 2, this.w, this.h);
