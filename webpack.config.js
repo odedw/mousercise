@@ -2,7 +2,7 @@ module.exports = {
   entry: "./src/index.ts",
   output: {
     filename: "bundle.js",
-    path: `${__dirname}/build` ,
+    path: `${__dirname}`,
   },
   module: {
     rules: [
