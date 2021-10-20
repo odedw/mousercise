@@ -1,4 +1,5 @@
 import * as p5 from "p5";
+import { Factory } from "./Factory";
 
 export class Rectangle {
   x: number;
@@ -17,42 +18,52 @@ export class Rectangle {
     );
   }
 }
+
 export abstract class GameObject {
+  static images: Record<string, p5.Image | null> = {
+    click: null,
+    doubleclick: null,
+    drag: null,
+  };
   p: p5;
   x: number;
   y: number;
   onComplete: (o: GameObject) => void;
   id: number;
-  name: string;
-  h: number;
-  w: any;
+  image: p5.Image;
+  h = 50;
+  w = 50;
   constructor(
     p: p5,
     x: number,
     y: number,
-    name: string,
+    image: string,
     onComplete: (o: GameObject) => void
   ) {
     this.p = p;
     this.x = x;
     this.y = y;
-    this.name = name;
-    this.h = 30;
     this.onComplete = onComplete;
     this.id = new Date().valueOf();
-    this.setWidth();
-  }
-  setWidth() {
-    this.w = this.p.textSize(this.h).textWidth(this.name);
+    this.image = GameObject.images[image]!;
   }
 
   render() {
     const p = this.p;
-    p.textSize(this.h);
-    // p.square(-this.w / 2, -this.h / 2, this.w, this.h);
-
-    // p.fill(0).circle(0, 0, 5);
-    p.text("Click", -this.w / 2, -this.h / 2, this.w, this.h);
+    // p.fill("yellow").rect(
+    //   this.x - this.w / 2,
+    //   this.y - this.h / 2,
+    //   this.w,
+    //   this.h
+    // );
+    p.image(
+      this.image,
+      this.x - this.w / 2,
+      this.y - this.h / 2,
+      this.w,
+      this.h
+    );
+    // p.text("Click", -this.w / 2, -this.h / 2, this.w, this.h);
   }
 
   contains(x: number, y: number): boolean {

@@ -8,7 +8,7 @@ export class DoubleClick extends GameObject {
     y: number,
     onComplete: (o: GameObject) => void
   ) {
-    super(p, x, y, "Double\nClick", onComplete);
+    super(p, x, y, "doubleclick", onComplete);
   }
   render(): void {
     super.render();
