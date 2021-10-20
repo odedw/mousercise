@@ -1,24 +1,6 @@
 import * as p5 from "p5";
-import { Factory } from "./Factory";
 
-export class Rectangle {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-  constructor(x: number, y: number, w: number, h: number) {
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-  }
-  contains(x: number, y: number): boolean {
-    return (
-      x > this.x && x < this.x + this.w && y > this.y && y < this.y + this.h
-    );
-  }
-}
-
+export const SIZE = 50;
 export abstract class GameObject {
   static images: Record<string, p5.Image | null> = {
     click: null,
@@ -31,8 +13,8 @@ export abstract class GameObject {
   onComplete: (o: GameObject) => void;
   id: number;
   image: p5.Image;
-  h = 50;
-  w = 50;
+  h = SIZE;
+  w = SIZE;
   constructor(
     p: p5,
     x: number,
