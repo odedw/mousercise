@@ -6,9 +6,9 @@ export class Click extends GameObject {
     p: p5,
     x: number,
     y: number,
-    onComplete: (o: GameObject) => void
+    onComplete: (o: GameObject) => void,
   ) {
-    super(p, x, y, "Click", onComplete);
+    super(p, x, y, "click", onComplete);
   }
   render(): void {
     const p = this.p;
