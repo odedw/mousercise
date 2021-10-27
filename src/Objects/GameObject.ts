@@ -6,6 +6,7 @@ export abstract class GameObject {
     click: null,
     doubleclick: null,
     drag: null,
+    hold: null,
   };
   p: p5;
   x: number;
