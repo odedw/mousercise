@@ -35,7 +35,7 @@ export class Hold extends GameObject {
         this.mousedown = false;
       }
       this.cur = 0;
-    } else {
+    } else if (this.contains(p.mouseX, p.mouseY)) {
       this.mousedown = true;
       this.cur += SPEED;
     }

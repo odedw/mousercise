@@ -24,8 +24,8 @@ export class Catch extends GameObject {
       this.x = this.w;
     }
     this.y += p.mouseY < this.y ? SPEED : -SPEED;
-    if (this.y > p.width - this.h) {
-      this.y = p.width - this.h;
+    if (this.y > p.height - this.h) {
+      this.y = p.height - this.h;
     }
     if (this.y < this.h) {
       this.y = this.h;
