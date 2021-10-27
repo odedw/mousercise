@@ -45,7 +45,7 @@ export class Drag extends GameObject {
         this.target.y,
         targetSize + p.sin(p.frameCount / 10)
       );
-      p.line(this.x, this.y, this.target.x, this.target.y);
+      p.strokeWeight(2).line(this.x, this.y, this.target.x, this.target.y);
     }
   }
 }
