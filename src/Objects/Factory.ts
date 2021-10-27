@@ -2,10 +2,12 @@ import * as p5 from "p5";
 import { Click } from "./Click";
 import { DoubleClick } from "./DoubleClick";
 import { Drag } from "./Drag";
+import { Hold } from "./Hold";
 import { GameObject, SIZE } from "./GameObject";
 
 export class Factory {
-  static classes = [Click, DoubleClick, Drag];
+  static classes = [Hold];
+  // static classes = [Click, DoubleClick, Drag];
   static createRandomObject(
     p: p5,
     onComplete: (o: GameObject) => void
