@@ -13,9 +13,7 @@ export class Catch extends GameObject {
   }
   render(): void {
     const p = this.p;
-    if (this.contains(p.mouseX, p.mouseY)) {
-      this.onComplete(this);
-    }
+
     this.x += p.mouseX < this.x ? SPEED : -SPEED;
     if (this.x > p.width - this.w) {
       this.x = p.width - this.w;
@@ -31,5 +29,11 @@ export class Catch extends GameObject {
       this.y = this.h;
     }
     super.render();
+  }
+
+  mouseClicked(evt: any) {
+    if (this.contains(evt.x, evt.y)) {
+      this.onComplete(this);
+    }
   }
 }
