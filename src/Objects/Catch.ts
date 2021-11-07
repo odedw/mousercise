@@ -1,7 +1,7 @@
 import p5 = require("p5");
 import { GameObject } from "./GameObject";
 
-const SPEED = 1.5;
+const SPEED = 1;
 export class Catch extends GameObject {
   constructor(
     p: p5,
