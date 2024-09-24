@@ -4,7 +4,7 @@
   "description": "Project to quickly get something working in [p5.js](https://p5js.org/) and [typescript](https://www.typescriptlang.org/)",
   "scripts": {
     "start": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server",
-    "build": "npx webpack --config webpack.config.js"
+    "build": "NODE_OPTIONS=--openssl-legacy-provider npx webpack --config webpack.config.js"
   },
   "homepage": "https://github.com/Gaweph/p5-typescript-starter#readme",
   "devDependencies": {
