@@ -9,8 +9,8 @@ import { TypeChar } from "./TypeChar";
 import { GameObject, SIZE } from "./GameObject";
 
 export class Factory {
-  static classes = [Click, DoubleClick, Drag, Catch, Hold, TypeChar];
-
+  // static classes = [Click, DoubleClick, Drag, Catch, Hold];
+  static classes = [TypeChar];
   static createRandomObject(
     p: p5,
     onComplete: (o: GameObject) => void
