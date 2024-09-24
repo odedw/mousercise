@@ -60,4 +60,5 @@ export abstract class GameObject {
   }
   mouseClicked(evt: any): void {}
   doubleClicked(evt: any): void {}
+  keyPressed(evt: any): void {}
 }

@@ -4,10 +4,13 @@ import { DoubleClick } from "./DoubleClick";
 import { Drag } from "./Drag";
 import { Hold } from "./Hold";
 import { Catch } from "./Catch";
+import { TypeChar } from "./TypeChar";
+
 import { GameObject, SIZE } from "./GameObject";
 
 export class Factory {
-  static classes = [Click, DoubleClick, Drag, Catch, Hold];
+  static classes = [Click, DoubleClick, Drag, Catch, Hold, TypeChar];
+
   static createRandomObject(
     p: p5,
     onComplete: (o: GameObject) => void

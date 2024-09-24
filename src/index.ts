@@ -52,6 +52,11 @@ const sketch = (p: p5) => {
   p.doubleClicked = (evt: object) => {
     objects.forEach((o) => o.doubleClicked(evt));
   };
+
+  // key pressed
+  p.keyPressed = () => {
+    objects.forEach((o) => o.keyPressed(p.keyCode));
+  };
 };
 
 new p5(sketch);
