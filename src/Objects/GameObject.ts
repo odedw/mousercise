@@ -58,7 +58,7 @@ export abstract class GameObject {
       y < this.y + this.h / 2
     );
   }
-  mouseClicked(evt: any): void {}
-  doubleClicked(evt: any): void {}
-  keyPressed(evt: any): void {}
+  mouseClicked(_: any): void {}
+  doubleClicked(_: any): void {}
+  keyPressed(_: any): void {}
 }

@@ -1,11 +1,12 @@
-import p5 = require("p5");
+import p5 from "p5";
+
 import { GameObject } from "./GameObject";
 
 const targetSize = 10;
 export class Drag extends GameObject {
   target: { x: number; y: number };
   mouseWasPressed = false;
-  isDragging: boolean;
+  isDragging: boolean = false;
   constructor(
     p: p5,
     x: number,

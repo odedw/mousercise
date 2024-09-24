@@ -1,11 +1,15 @@
-import * as p5 from "p5";
+import p5 from "p5";
 import { GameObject } from "./Objects/GameObject";
 import { Factory } from "./Objects/Factory";
 
 let score = 0;
 const objects: GameObject[] = [];
 let time = 0;
-const sketch = (p: p5) => {
+import "./style.css";
+
+new p5((p5Instance) => {
+  const p = p5Instance as unknown as p5;
+
   const addObject = () => {
     objects.push(
       Factory.createRandomObject(p, (o: GameObject) => {
@@ -19,7 +23,7 @@ const sketch = (p: p5) => {
   };
   p.preload = () => {
     for (const name in GameObject.images) {
-      GameObject.images[name] = p.loadImage(`resources/images/${name}.png`);
+      GameObject.images[name] = p.loadImage(`assets/images/${name}.png`);
     }
   };
   p.setup = () => {
@@ -57,6 +61,4 @@ const sketch = (p: p5) => {
   p.keyPressed = () => {
     objects.forEach((o) => o.keyPressed(p.keyCode));
   };
-};
-
-new p5(sketch);
+}, document.getElementById("app")!);

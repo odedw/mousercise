@@ -1,13 +1,21 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es5",
-    "outDir": "./src/",
-    "removeComments": true,
-    "preserveConstEnums": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "node",
+    "strict": true,
     "sourceMap": true,
-    "noImplicitAny": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": ["vite/client"],
+    "noEmit": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true
   },
-  "exclude": ["node_modules"],
-  "include": ["src/*"]
+  "include": [
+    "./src",
+    "node_modules/@types/p5/index.d.ts"
+  ]
 }

@@ -1,4 +1,5 @@
-import p5 = require("p5");
+import p5 from "p5";
+
 import { GameObject } from "./GameObject";
 
 export class Click extends GameObject {
@@ -6,14 +7,12 @@ export class Click extends GameObject {
     p: p5,
     x: number,
     y: number,
-    onComplete: (o: GameObject) => void,
+    onComplete: (o: GameObject) => void
   ) {
     super(p, x, y, "click", onComplete);
   }
   render(): void {
-    const p = this.p;
     super.render();
-   
   }
 
   mouseClicked(evt: any) {

@@ -1,4 +1,5 @@
-import p5 = require("p5");
+import p5 from "p5";
+
 import { GameObject } from "./GameObject";
 
 export class DoubleClick extends GameObject {

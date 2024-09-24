@@ -1,4 +1,5 @@
-import p5 = require("p5");
+import p5 from "p5";
+
 import { GameObject } from "./GameObject";
 
 const SPEED = 1;
@@ -19,9 +20,6 @@ export class Hold extends GameObject {
     super(p, x, y, "hold", onComplete);
     this.min = p.random(50, 70);
     this.max = p.random(this.min + MIN_RANGE, this.min + MAX_RANGE);
-    // p.mouseReleased(() => {
-
-    // });
   }
   render(): void {
     const p = this.p;
@@ -30,7 +28,6 @@ export class Hold extends GameObject {
       if (this.mousedown) {
         if (this.cur >= this.min && this.cur <= this.max) {
           this.onComplete(this);
-          p.mouseReleased = null;
         }
         this.mousedown = false;
       }
